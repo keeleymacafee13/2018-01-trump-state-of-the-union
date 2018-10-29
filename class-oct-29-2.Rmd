@@ -1,0 +1,27 @@
+---
+title: "Class Oct 29 - 2"
+author: "Keeley MacAfee"
+date: "10/29/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(stringr)
+library(knitr)
+library(dplyr)
+library(readxl)
+install.packages("tidytext")
+library(tidytext)
+```
+
+```{r}
+sou_data <- read_csv("data/sou.csv")
+
+presidents_data <- read_csv("data/presidents.csv")
+
+joined <- sou_data %>%
+  left_join(presidents_data)
+```
+
